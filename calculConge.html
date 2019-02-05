@@ -179,7 +179,7 @@
                         //console.log(Math.round(difference_ms/one_day))
                         // Convert back to days and return
                         var laDiff = Math.round(difference_ms/one_day);
-						return parseInt(laDiff * vueData.heureSemaine/7) ;
+						return parseInt((laDiff + 1) * vueData.heureSemaine/5) ;// +1 car la date deb n'est pas prise en compte, on fait juste la dif des deux jours..
 					},
 					daysBetween: function( date1, date2 ) {
 						//Get 1 day in milliseconds
@@ -195,7 +195,7 @@
 						var difference_ms = date2_ms - date1_ms;
 						//console.log(Math.round(difference_ms/one_day))
 						// Convert back to days and return
-						var laDiff = Math.round(difference_ms/one_day);
+						var laDiff = Math.round(difference_ms/one_day) + 1; // +1 car la date deb n'est pas prise en compte, on fait juste la dif des deux jours..
 						vueData.nbConges =  parseInt(Math.ceil(parseInt(laDiff/28) * 2.08))
 						// etp = nb dheure hebdo prévu sur le contrat / 35
 							//
